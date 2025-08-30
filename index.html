@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Weather App</title>
+
+  <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        height: 100%;
+      }
+    }
+
+    .weather-details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
+      gap: 15px;
+      margin: 20px auto;
+      padding: 15px;
+      max-width: 500px;
+    }
+
+    .weather-details-grid div {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .weather-details-grid .label {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="navbar">
+    <li style="float: left; margin-left: -10px;" class="forecast"><a class="repo-link">⛄ Forecast</a></li>
+    <li><a href="#">⟳</a></li>
+    <li><a href="#">☆</a></li>
+    <li><a href="#">···</a></li>
+    <li><input spellcheck="false" class="search-city" id="searchCity" type="text" autocomplete="off"
+        placeholder="🔍︎ Search City"></li>
+  </ul>
+
+  <ul class="mobile-navbar">
+    <li><input spellcheck="false" class="mobile-search-city" id="mobileSearchCity" type="text" autocomplete="off"
+        placeholder="Search City..."></li>
+  </ul>
+
+  <h1 class="location-name" id="locationName">Search City...</h1>
+
+  <div class="temperature-container">
+    <div class="temperature-icon"><img class="imgs-as-icons" src="icons/sunny.png"></div>
+    <div class="temperature-value" id="temperatureValue"></div>
+  </div>
+
+  <h2 class="weather-type" id="weatherType"></h2>
+
+  <div class="daily-forecast">
+    <h2 class="daily-forecast-label">Daily</h2>
+    <div id="forecast-container" class="forecast-container"></div>
+  </div>
+
+  <!-- Weather details grid -->
+  <div class="weather-details-grid">
+    <div>
+      <span class="label">Feels Like</span>
+      <span id="realFeelAdditionalValue">-</span>
+    </div>
+    <div>
+      <span class="label">Highest Temp</span>
+      <span id="maxTemperatureAdditionalValue">-</span>
+    </div>
+    <div>
+      <span class="label">Lowest Temp</span>
+      <span id="minTemperatureAdditionalValue">-</span>
+    </div>
+    <div>
+      <span class="label">Wind Speed</span>
+      <span id="windSpeedAdditionalValue">-</span>
+    </div>
+    <div>
+      <span class="label">Wind Direction</span>
+      <span id="windDirectionAdditionalValue">-</span>
+    </div>
+    <div>
+      <span class="label">Pressure</span>
+      <span id="pressureAdditionalValue">-</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="mobile.js"></script>
+</body>
+
+</html>
